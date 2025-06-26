@@ -34,3 +34,4 @@ function returNumber(str) {
   return strNumber;
 }
 console.log(returNumber('23ECM 5 AScript 2022'));
+
