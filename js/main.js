@@ -19,8 +19,8 @@ const NAMES = [
   `Зинаида`,
   `Иван`
 ];
-const minIdPhoto = 1;
-const maxIdPhoto = 25;
+const MIN_ID_PHOTO = 1;
+const MAX_ID_PHOTO = 25;
 
 function getRandomInteger (min, max) {
   const lower = Math.ceil(Math.min(Math.abs(min), Math.abs(max)));
@@ -31,18 +31,18 @@ function getRandomInteger (min, max) {
 }
 
 function createRandomIdFromRangeGenerator (min, max) {
-  const previousValues = [];
+  const PREVIOS_VALUES = [];
 
   return function () {
     let currentValue = getRandomInteger(min, max);
-    if (previousValues.length >= (max - min + 1)) {
+    if (PREVIOS_VALUES.length >= (max - min + 1)) {
       console.error('Перебраны все числа из диапазона от ' + min + ' до ' + max);
       return null;
     }
-    while (previousValues.includes(currentValue)) {
+    while (PREVIOS_VALUES.includes(currentValue)) {
       currentValue = getRandomInteger(min, max);
     }
-    previousValues.push(currentValue);
+    PREVIOS_VALUES.push(currentValue);
     return currentValue;
   };
 }
@@ -56,8 +56,8 @@ function createGenerator () {
   };
 }
 
-const ID = createGenerator();
-const CREATE_DESCRIPTION_PHOTO = () => {
+const id = createGenerator();
+const createDescriptionPhoto = () => {
 
 const RANDOM__NAME = getRandomInteger(0, NAMES.length - 1);
 const AVATAR = getRandomInteger(1, 6);
@@ -65,7 +65,7 @@ const LIKE = getRandomInteger(15, 200);
 const RANDOM__COMMENT = getRandomInteger(0, COMMENTS.length - 1);
 
   return {
-    id: ID(),
+    id: id(),
     url: `img/avatar${AVATAR}.jpg`,
     description: DESCRIPTION,
     likes: LIKE,
@@ -74,6 +74,8 @@ const RANDOM__COMMENT = getRandomInteger(0, COMMENTS.length - 1);
   };
 };
 
-for(let i = 1; i <= maxIdPhoto; i++) {
-	console.log(CREATE_DESCRIPTION_PHOTO());
+let arrUserPhoto = createDescriptionPhoto();
+
+for(let i = 1; i <= MAX_ID_PHOTO; i++) {
+	console.log(arrUserPhoto);
 }
