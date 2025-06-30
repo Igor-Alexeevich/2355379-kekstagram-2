@@ -57,25 +57,26 @@ function createGenerator () {
 }
 
 const id = createGenerator();
-const createDescriptionPhoto = () => {
+const CREATE_DESCRIPTION_PHOTO = () => {
+const randomName = getRandomInteger(0, NAMES.length - 1);
+const avatar = getRandomInteger(1, 6);
+const like = getRandomInteger(15, 200);
 
-const RANDOM__NAME = getRandomInteger(0, NAMES.length - 1);
-const AVATAR = getRandomInteger(1, 6);
-const LIKE = getRandomInteger(15, 200);
-const RANDOM__COMMENT = getRandomInteger(0, COMMENTS.length - 1);
+const randomComments = [];
 
+let randomRepeat = getRandomInteger(0, 30);
+
+for(let i = 0; i < randomRepeat; i++) {
+	randomComments.push(COMMENTS[getRandomInteger(0, COMMENTS.length - 1)]);
+	//const randomComment = getRandomInteger(0, COMMENTS.length - 1);
+}
   return {
     id: id(),
-    url: `img/avatar${AVATAR}.jpg`,
+    url: `img/avatar${avatar}.jpg`,
     description: DESCRIPTION,
-    likes: LIKE,
-    comments: COMMENTS[RANDOM__COMMENT],
-    names: NAMES[RANDOM__NAME]
+    likes: like,
+    comments: randomComments,
+    names: NAMES[randomName]
   };
 };
-
-let arrUserPhoto = createDescriptionPhoto();
-
-for(let i = 1; i <= MAX_ID_PHOTO; i++) {
-	console.log(arrUserPhoto);
-}
+const DESCRIPTION_PHOTO = CREATE_DESCRIPTION_PHOTO();
