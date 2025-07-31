@@ -1,5 +1,5 @@
 // импорт функции по обработке описаний фотографий:
-import {CREATE_DESCRIPTION_PHOTO} from './create-description-photo.js';
+import {createDescriptionPhoto} from './create-description-photo.js';
 
 // найти контейнер для фотографий
 const contanerPhotos = document.querySelector('.picture');
@@ -12,7 +12,7 @@ const pattern = document.querySelector('#picture').content;
 const patternContent = pattern.querySelector('.picture');
 
 // Обработка данных, получаемых от create-description-photo.js
-CREATE_DESCRIPTION_PHOTO.forEach(({url, description, likes, comments}) => {
+createDescriptionPhoto.forEach(({url, description, likes, comments}) => {
   // Клонирование шаблона
   const element = patternContent.cloneNode(true);
   // найти место для картинки
@@ -26,9 +26,18 @@ CREATE_DESCRIPTION_PHOTO.forEach(({url, description, likes, comments}) => {
   // Количество комментариев comments выведите в блок .picture__comments
   element.querySelector('.picture__comments').textContent = comments.length;
 
+  photosFragment.appendChild(element);
 });
 
 // Отрисуйте сгенерированные DOM-элементы в блок .pictures. Для вставки элементов используйте DocumentFragment
-contanerPhotos.appendChild(element);
+contanerPhotos.appendChild(photosFragment);
 
-export {contanerPhotos};
+const OBJECT_COUNT = 25;
+
+// Массив объектов
+const objectPhoto = Array.from(
+  { length: OBJECT_COUNT }, // указываю длину массива (количество создаваемых объектов)
+
+);
+
+export {objectPhoto};

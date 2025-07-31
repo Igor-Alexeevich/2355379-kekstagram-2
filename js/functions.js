@@ -1,5 +1,5 @@
 function measureString(str, maxStr) {
-  const result = str.length <= maxStr;
+  const result = str.length <= maxStr; // почему maxStr, а не maxStr.length?
   return !result;
 }
 

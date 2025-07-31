@@ -12,7 +12,7 @@ function createGenerator () {
 
 const id = createGenerator();
 
-const CREATE_DESCRIPTION_PHOTO = () => {
+const createDescriptionPhoto = () => {
   const randomName = getRandomInteger(0, NAMES.length - 1);
   const avatar = getRandomInteger(1, 6);
   const like = getRandomInteger(15, 200);
@@ -35,4 +35,4 @@ const CREATE_DESCRIPTION_PHOTO = () => {
 };
 
 
-export {CREATE_DESCRIPTION_PHOTO};
+export {createDescriptionPhoto};
