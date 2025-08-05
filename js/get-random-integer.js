@@ -7,4 +7,7 @@ function getRandomInteger (min, max) {
   return Math.floor(result);
 }
 
+//console.log(getRandomInteger(1, 10));
+
+// Получить случайное число
 export {getRandomInteger};

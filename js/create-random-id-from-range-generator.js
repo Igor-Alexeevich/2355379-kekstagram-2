@@ -17,4 +17,4 @@ function createRandomIdFromRangeGenerator (min, max) {
   };
 }
 
-export {createRandomIdFromRangeGenerator, getRandomInteger}; // getRandomInteger тут убрать?
+export {createRandomIdFromRangeGenerator};

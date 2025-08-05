@@ -3,6 +3,7 @@ function measureString(str, maxStr) {
   return !result;
 }
 
+//console.log(measureString('1кккккккк', ' строка2'));
 
 function palindrome(str) {
   str = str.replaceAll(' ', '');
@@ -16,6 +17,7 @@ function palindrome(str) {
     return newStr;
   }
 }
+//console.log(palindrome('Потоп'));
 palindrome('Потоп');
 
 
@@ -34,3 +36,4 @@ function returNumber(str) {
   return strNumber;
 }
 
+//console.log(returNumber('7854'));

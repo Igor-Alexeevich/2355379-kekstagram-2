@@ -1,5 +1,7 @@
 import {createRandomIdFromRangeGenerator} from './create-random-id-from-range-generator.js';
 
+const OBJECT_COUNT = 25;// длина массива (количество создаваемых объектов)
+
 const DESCRIPTION = `Описание фотографии.`;
 const COMMENTS = [
   `Всё отлично!`,
@@ -24,4 +26,5 @@ const NAMES = [
 const MIN_ID_PHOTO = 1;
 const MAX_ID_PHOTO = 25;
 
-export {DESCRIPTION, COMMENTS, NAMES, MIN_ID_PHOTO, MAX_ID_PHOTO};
+//console.log(OBJECT_COUNT, DESCRIPTION, COMMENTS, NAMES, MIN_ID_PHOTO, MAX_ID_PHOTO);
+export {OBJECT_COUNT, DESCRIPTION, COMMENTS, NAMES, MIN_ID_PHOTO, MAX_ID_PHOTO};

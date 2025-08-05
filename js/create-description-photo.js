@@ -1,5 +1,5 @@
 import {getRandomInteger} from './get-random-integer.js';
-import {DESCRIPTION, COMMENTS, NAMES} from './const.js';
+import {OBJECT_COUNT, DESCRIPTION, COMMENTS, NAMES} from './const.js';
 
 function createGenerator () {
   let lastGenerated = 0;
@@ -12,6 +12,7 @@ function createGenerator () {
 
 const id = createGenerator();
 
+// генерирует описание случайной фотографии
 const createDescriptionPhoto = () => {
   const randomName = getRandomInteger(0, NAMES.length - 1);
   const avatar = getRandomInteger(1, 6);
@@ -26,7 +27,7 @@ const createDescriptionPhoto = () => {
   }
   return {
     id: id(),
-    url: `img/avatar${avatar}.jpg`,
+    url: `photos/${avatar}.jpg`,
     description: DESCRIPTION,
     likes: like,
     comments: randomComments,
@@ -34,5 +35,13 @@ const createDescriptionPhoto = () => {
   };
 };
 
+//console.log(createDescriptionPhoto());
 
-export {createDescriptionPhoto};
+// Массив объектов
+const objectPhoto = Array.from(
+  {length: OBJECT_COUNT},
+  createDescriptionPhoto
+);
+
+//console.log(objectPhoto);
+export {objectPhoto};
