@@ -1,8 +1,8 @@
 // импорт функции по обработке описаний фотографий:
 import {objectPhoto} from './create-description-photo.js';
 
-// найти контейнер для фотографий
-const contanerPhotos = document.querySelector('.pictures');
+// найти контейнер для всех фотографий на общей странице
+const containerPhotos = document.querySelector('.pictures');
 
 // создать фрагмент для шаблона
 const photosFragment = document.createDocumentFragment();
@@ -11,13 +11,23 @@ const photosFragment = document.createDocumentFragment();
 const pattern = document.querySelector('#picture').content;
 const patternContent = pattern.querySelector('.picture');
 
+// Функция открытия большого окна:
+const openBigPicture = (pictureId) => {
+  // Объект из массива фотографий, который соответствует id, с помощью find
+  //const currentPhoto =
+}
+
 // Обработка данных, получаемых от create-description-photo.js
-objectPhoto.forEach(({url, description, likes, comments}) => {
+objectPhoto.forEach(({id, url, description, likes, comments}) => {
   // Клонирование шаблона
   const element = patternContent.cloneNode(true);
 
   // найти место для картинки
   const elementImage = element.querySelector('.picture__img');
+
+  // Подготовка id очередной фотографии (прописать id в forEach)
+  // прописывает в html после class: data-picture-id="порядковый_номер"
+  element.dataset.pictureId = id;
 
   // Адрес изображения url подставьте как атрибут src изображения
   elementImage.src = url;
@@ -36,7 +46,9 @@ objectPhoto.forEach(({url, description, likes, comments}) => {
 
 // Отрисуйте сгенерированные DOM-элементы в блок .pictures. Для вставки элементов используйте DocumentFragment
 
-const thumbnailsPhoto = contanerPhotos.appendChild(photosFragment);
+const thumbnailsPhoto = containerPhotos.appendChild(photosFragment);
 
-// Передавать contanerPhotos ???
-export {thumbnailsPhoto};
+
+
+export {thumbnailsPhoto, containerPhotos};
+
