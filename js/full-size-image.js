@@ -23,17 +23,8 @@ const commentsLoader = bigPicture.querySelector('.social__comments-loader');
 const cancelPicture = bigPicture.querySelector('.big-picture__cancel');
 //console.log(cancelPicture);
 
-// Обработчик нажатия на весь .big-picture, т.к. накладываем на родителя
-bigPicture.addEventListener('click', (evt) => {
-  // Проверка, что событие произошло на .picture
-  const currentPicture = evt.target.closest('.picture');
 
-  if(currentPicture) {
-    // Вызов функции, которая открывает нужную большую фотографию
-    openBigPicture(currentPicture.dataset.pictureId);
 
-  }
-});
 
 
 //console.log('работает');
