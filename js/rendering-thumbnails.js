@@ -14,6 +14,7 @@ const patternContent = pattern.querySelector('.picture');
 // Функция открытия большого окна:
 const openPicture = (pictureId) => {
   // Объект из массива фотографий, который соответствует id, с помощью find
+  //const currentPhoto =
 };
 
 // Обработка данных, получаемых от create-description-photo.js
@@ -46,7 +47,4 @@ objectPhoto.forEach(({id, url, description, likes, comments}) => {
 // Отрисуйте сгенерированные DOM-элементы в блок .pictures. Для вставки элементов используйте DocumentFragment
 
 const thumbnailsPhoto = containerPhotos.appendChild(photosFragment);
-
-const recOpenPicture = openPicture;
-
-export {thumbnailsPhoto, containerPhotos, recOpenPicture};
+export {thumbnailsPhoto, containerPhotos, openPicture};

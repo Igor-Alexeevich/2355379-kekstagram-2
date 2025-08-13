@@ -8,7 +8,7 @@ containerPhotos.addEventListener('click', (evt) => {
   console.log('currentNode');
   // по результату проверки запустить функцию по определенному id
   if(currentNode) {
-    recOpenPicture(currentNode.dataset.pictureId);
+    openPicture(currentNode.dataset.pictureId);
     console.log('Щелчок');
   }
 });
