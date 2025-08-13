@@ -1,5 +1,6 @@
 import {objectPhoto} from './create-description-photo.js';
 import {containerPhotos} from './event-handler.js';
+//import {containerPhotos} from './full-size-image.js';
 
 //import {thumbnailsPhoto} from './rendering-thumbnails.js';
 //console.log(thumbnailsPhoto);

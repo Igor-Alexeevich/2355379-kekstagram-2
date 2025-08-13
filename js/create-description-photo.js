@@ -35,7 +35,7 @@ const createDescriptionPhoto = () => {
   };
 };
 
-console.log(createDescriptionPhoto());
+//console.log(createDescriptionPhoto());
 
 // Массив объектов
 const objectPhoto = Array.from(
@@ -43,5 +43,7 @@ const objectPhoto = Array.from(
   createDescriptionPhoto
 );
 
+const photos = createDescriptionPhoto();
+
 //console.log(objectPhoto);
-export {objectPhoto, createDescriptionPhoto};
+export {objectPhoto, createDescriptionPhoto, photos};

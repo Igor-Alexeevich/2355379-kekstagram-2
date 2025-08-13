@@ -11,13 +11,7 @@ const photosFragment = document.createDocumentFragment();
 const pattern = document.querySelector('#picture').content;
 const patternContent = pattern.querySelector('.picture');
 
-// Функция открытия большого окна:
-const openPicture = (pictureId) => {
-  // Объект из массива фотографий, который соответствует id, с помощью find
-  //const currentPhoto =
-};
-
-// Обработка данных, получаемых от create-description-photo.js
+// Обработка данных, получаемых от create-description-photo.js для создания миниарюр
 objectPhoto.forEach(({id, url, description, likes, comments}) => {
   // Клонирование шаблона
   const element = patternContent.cloneNode(true);
@@ -25,8 +19,9 @@ objectPhoto.forEach(({id, url, description, likes, comments}) => {
   const elementImage = element.querySelector('.picture__img');
 
   // Подготовка id очередной фотографии (прописать id в forEach)
-  // прописывает в html после class: data-picture-id="порядковый_номер"
-  // для заполнения карточки нужными данными
+  // прописывает в html после class:
+  // data-picture-id="порядковый_номер"
+  // для поиска нужной карточки
   element.dataset.pictureId = id;
 
   // Адрес изображения url подставьте как атрибут src изображения
@@ -45,6 +40,5 @@ objectPhoto.forEach(({id, url, description, likes, comments}) => {
 });
 
 // Отрисуйте сгенерированные DOM-элементы в блок .pictures. Для вставки элементов используйте DocumentFragment
-
 const thumbnailsPhoto = containerPhotos.appendChild(photosFragment);
-export {thumbnailsPhoto, containerPhotos, openPicture};
+export {thumbnailsPhoto, containerPhotos};

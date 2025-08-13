@@ -1,4 +1,4 @@
-import {createRandomIdFromRangeGenerator} from './create-random-id-from-range-generator.js';
+//import {createRandomIdFromRangeGenerator} from './create-random-id-from-range-generator.js';
 
 const OBJECT_COUNT = 25; // длина массива (количество создаваемых объектов)
 
