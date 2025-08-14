@@ -1,5 +1,5 @@
 import {objectPhoto, photos} from './create-description-photo.js';
-import {thumbnailsPhoto} from './rendering-thumbnails.js';
+import {thumbnailsPhoto, containerPhotos} from './rendering-thumbnails.js';
 
 // Найти окно
 const bigPicture = document.querySelector('.big-picture');
@@ -26,7 +26,7 @@ const cancelPicture = bigPicture.querySelector('.big-picture__cancel');
 const STEP_COMMENTS = 5;
 
 // Функция, открывающая большое фото в <section class="big-picture  overlay  hidden">
-const openBigPicture = function (pictureId) {
+const openBigPicture = (pictureId) => {
   // найти объект в соотв с id
   const currentPhoto = photos.find((photo) => photo.id === Number(pictureId));
   // создание фрагмента для DOM-узлов
@@ -42,7 +42,6 @@ const openBigPicture = function (pictureId) {
     // клонирование itemCommentPicture
     const socialComment = itemCommentPicture.cloneNode(true);
 
-    //
     socialComment.querySelector('.social__picture').src = comment.avatar;
     socialComment.querySelector('.social__picture').alr = comment.names;
     socialComment.querySelector('.social__text').textContent = comment.message;

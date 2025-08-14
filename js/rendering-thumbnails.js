@@ -18,9 +18,8 @@ objectPhoto.forEach(({id, url, description, likes, comments}) => {
   // найти место для картинки
   const elementImage = element.querySelector('.picture__img');
 
-  // Подготовка id очередной фотографии (прописать id в forEach)
-  // прописывает в html после class:
-  // data-picture-id="порядковый_номер"
+  // Подготовка id очередной фотографии и получится
+  // dataset.pictureId = data-picture-id="порядковый_номер"
   // для поиска нужной карточки
   element.dataset.pictureId = id;
 
