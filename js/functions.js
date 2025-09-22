@@ -1,9 +1,11 @@
+// Длина строки
 function measureString(str, maxStr) {
   const result = str.length <= maxStr;
   return !result;
 }
+console.log(measureString('строка', 7));
 
-
+// Палиндром
 function palindrome(str) {
   str = str.replaceAll(' ', '');
   str = str.toLowerCase();
@@ -16,10 +18,10 @@ function palindrome(str) {
     return newStr;
   }
 }
-palindrome('Потоп');
+console.log(palindrome('Потоп '));
 
-
-function returNumber(str) {
+// Извлечение чисел
+function returnNumber(str) {
   let strNumber = ''; // полученное число в виде строки
   let symbolStr; // отдельный символ
 
@@ -33,5 +35,5 @@ function returNumber(str) {
   strNumber = Number(strNumber);
   return strNumber;
 }
-console.log(returNumber('23ECM 5 AScript 2022'));
+console.log(returnNumber('23ECM 5 AScript 2022'));
 
